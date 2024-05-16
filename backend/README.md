@@ -2,6 +2,9 @@
 
 ### Installation
 
+1. **Install MongoDB Compass**
+
+2. **Install Project Depenedences**
 ```
    cd backend && npm install
 ```
@@ -9,16 +12,20 @@
 
 ### Environment Setup
 
-Create a `.env` file in  the `backend` directory
-
-**backend**
+1. **Create a `.env` file in  the `backend` directory**
 
 
-    
+```
     PORT=
 
     MONGODB_URL=
+```
 
+
+2. **Upload Employees json file  in the `'../data'`  directory to Mongo**
+```
+    Upload `employee.json` file to `MongoDB Compass`
+```
 
 
 ### Running the Application
