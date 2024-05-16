@@ -15,10 +15,19 @@ const EmployeeContainer = ({ employee }) => {
   };
 
   const [dataSets, setDataSets] = useState([dataSet]);
+  const [salaryExpData, setSalaryExpData] = useState([
+    { x: 9, y: 185000 },
+    { x: 2, y: 50000 },
+    { x: 1, y: 20000 },
+    { x: 1, y: 20000 },
+    { x: 5, y: 35000 },
+    { x: 9, y: 820000 },
+    // Add more data as needed
+  ]);
   const [labels, setLabels] = useState([]);
   const [highlightedLabel, setHightLightedLabel] = useState('');
 
-  const fetchData = useCallback(async () => {
+  const fetchAgeDistributionData = useCallback(async () => {
     try {
       const response = await fetch('http://localhost:4000/api/v1/employee/ageDistribution', {
         method: 'GET',
@@ -35,35 +44,48 @@ const EmployeeContainer = ({ employee }) => {
     }
   }, []);
 
+
+  const fetchSalaryExpData = useCallback(async () => {
+    try {
+      const response = await fetch('http://localhost:4000/api/v1/employee/all?fields=experience,salary', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      const { employees } =await response.json();
+      const referenceDataset=employees.map(data => ({ x: data.experience, y: data.salary }))
+      setSalaryExpData(referenceDataset);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  }, []);
+
   useEffect(() => {
     const hLabel = getAgeDistributionLabel(employee.age);
-    console.log(hLabel);
     setHightLightedLabel(hLabel);
-    fetchData();
-  }, [fetchData]);
+    fetchAgeDistributionData();
+  }, [fetchAgeDistributionData]);
 
   useEffect(() => {
 
   }, [highlightedLabel])
 
+  useEffect(() => {
+    fetchSalaryExpData();
+
+  }, [fetchSalaryExpData])
+
 
   // Example reference dataset (array of objects with 'experience' and 'salary' properties)
-  const referenceData = [
-    { experience: 1, salary: 45000 },
-    { experience: 2, salary: 50000 },
-    { experience: 1, salary: 20000 },
-    { experience: 3, salary: 55000 },
-    { experience: 9, salary: 120000 },
-    // Add more data as needed
-  ];
 
   return (
     <div className='employee-container'>
       <EmployeeItem employee={employee} />
       <h4>Age Distribution</h4>
-      {employee && <BarChart labels={labels} dataSets={dataSets} highLightLabel={highlightedLabel} />}
+      {employee && <BarChart employeeData={employee} labels={labels} dataSets={dataSets} highLightLabel={highlightedLabel} />}
       <h4>Salary vs. Experience Scatter Plot</h4>
-      <ScatterChart employeeData={employee} referenceData={referenceData} />
+      <ScatterChart employeeData={employee} referenceDataSet={salaryExpData} />
     </div>
   )
 }

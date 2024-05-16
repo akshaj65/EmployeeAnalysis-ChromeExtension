@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Scatter } from 'react-chartjs-2';
 
 import "chart.js/auto";
@@ -11,27 +11,27 @@ const graphStyle = {
     border: "1px solid #C4C4C4",
     borderRadius: "0.375rem",
     padding: "2rem",
+
 };
 
-const ScatterChart = ({ employeeData, referenceData }) => {
+const ScatterChart = ({ employeeData, referenceDataSet }) => {
     // Extracting salary and experience data for the particular employee
     const { firstName, salary, experience } = employeeData;
 
     const individualData = [{ x: experience, y: salary }];
-    const referenceDataset = referenceData.map(data => ({ x: data.experience, y: data.salary }));
 
     const chartData = {
         datasets: [
             {
                 label: `${firstName}'s Salary vs. Experience`,
                 data: individualData,
-                backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                backgroundColor: 'rgba(255, 99, 132, 0.8)',
                 borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 1,
+                borderWidth: 3,
             },
             {
                 label: 'Reference Dataset',
-                data: referenceDataset,
+                data: referenceDataSet,
                 backgroundColor: 'rgba(54, 162, 235, 0.6)',
                 borderColor: 'rgba(54, 162, 235, 1)',
                 borderWidth: 1,
@@ -46,12 +46,28 @@ const ScatterChart = ({ employeeData, referenceData }) => {
                 title: {
                     display: true,
                     text: 'Experience (years)',
+                    color: "white",
+                },
+                ticks: {
+                    color: "white",
+                    font: {
+                        family: "Nunito",
+                        size: 12,
+                    },
                 },
             },
             y: {
                 title: {
                     display: true,
                     text: 'Salary (Rupees)',
+                    color: "white",
+                },
+                ticks: {
+                    color: "white",
+                    font: {
+                        family: "Nunito",
+                        size: 12,
+                    },
                 },
             },
         },
@@ -63,9 +79,11 @@ const ScatterChart = ({ employeeData, referenceData }) => {
             title: {
                 display: true,
                 text: `${firstName}'s Salary vs. Experience`,
+                color: "white",
             },
         },
     };
+
 
     return (
         <div style={graphStyle}>

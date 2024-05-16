@@ -1,5 +1,5 @@
 import express from "express";
-import { getAgeDistribution, getEmployeeById, getEmployeesByFirstName } from "../controllers/employeeController.js";
+import { getAgeDistribution, getEmployeeById, getEmployeesByFirstName, getFields } from "../controllers/employeeController.js";
 
 const employeeRouter = express.Router();
 
@@ -17,10 +17,20 @@ employeeRouter.get('/', getEmployeesByFirstName);
 employeeRouter.get('/ageDistribution', getAgeDistribution);
 
 
+
+
+/** Dynamic
+ * GET  /api/v1/employee/all?fields=firstName,email 
+ */
+ employeeRouter.get('/all', getFields);
+
+ 
 /**
  * GET /api/v1/employee/:id 
  */
 employeeRouter.get('/:id', getEmployeeById);
+
+
 
 
 

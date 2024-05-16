@@ -27,6 +27,37 @@ const EmployeeSchema = new mongoose.Schema({
         type: Number,
         required: [true, 'Required age'],
     },
+    gender: {
+        type: String,
+        required: [true, 'Required gender'],
+    },
+    phone: {
+        type: String,
+        required: [true, 'Required phone'],
+        minlength: 10,
+        maxlength: 15,
+    }, 
+    education: {
+        type: String,
+        required: [true, 'Required education'],
+    },
+    occupation: {
+        type: String,
+        required: [true, 'Required occupation'],
+    },
+    salary: {
+        type: Number,
+        required: [true, 'Required salary'],
+    },
+    experience: {
+        type: Number,
+        required: [true, 'Required experience'],
+    },
+    martialStatus: {
+        type: String,
+        required: [true, 'Required Martial Status'],
+    },
+    
     
 });
 

@@ -20,17 +20,23 @@ const BarChart = (props) => {
     const {
         options: customOptions,
         highLightLabel,
+        employeeData,
         labels,
         dataSets,
         style = graphStyle
     } = props;
 
-
+    const { firstName } = employeeData;
     const defaultOptions = {
         scales: {
             x: {
                 grid: {
                     display: false,
+                },
+                title: {
+                    display: true,
+                    text: 'Age Range (years)',
+                    color: "white",
                 },
                 ticks: {
                     color: "white",
@@ -44,8 +50,13 @@ const BarChart = (props) => {
                 grid: {
                     display: false,
                 },
+                title: {
+                    display: true,
+                    text: 'No Of Employees',
+                    color: "white",
+                },
                 ticks: {
-                    color: "wheat",
+                    color: "white",
                     font: {
                         family: "Nunito",
                         size: 12,
@@ -60,7 +71,9 @@ const BarChart = (props) => {
                 display: false,
             },
             title: {
-                display: false,
+                display: true,
+                text: `${firstName}'s Employee Distribution by Age Range`,
+                color: "white",
             },
         },
     };
