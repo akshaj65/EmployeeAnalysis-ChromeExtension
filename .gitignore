@@ -1,0 +1,21 @@
+# dependencies
+chrome-extension-boilerplate-react/node_modules
+
+# testing
+chrome-extension-boilerplate-react/coverage
+
+# production
+chrome-extension-boilerplate-react/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.history
+
+# secrets
+secrets.*.js
+
+chrome-extension-boilerplate-react/zip
