@@ -1,11 +1,11 @@
 # dependencies
-chrome-extension-boilerplate-react/node_modules
+chrome-extension-react/node_modules
 
 # testing
-chrome-extension-boilerplate-react/coverage
+chrome-extension-react/coverage
 
 # production
-chrome-extension-boilerplate-react/build
+chrome-extension-react/build
 
 # misc
 .DS_Store
@@ -18,4 +18,4 @@ chrome-extension-boilerplate-react/build
 # secrets
 secrets.*.js
 
-chrome-extension-boilerplate-react/zip
+chrome-extension-react/zip
