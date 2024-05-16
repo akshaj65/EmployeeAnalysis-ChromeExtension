@@ -33,7 +33,7 @@ const PanelComponent = ({ content = "" }) => {
     return (
         <>
             <h1>Employee Analytics</h1>
-            {content}
+            {(data?.length ==0 || content.length< 0) && <h4>Employee Not found</h4> }
             {data && data.length >1 && <EmployeeList key={JSON.stringify(data)} data={data} />
             }
             {data && data.length === 1 && <EmployeeContainer key={JSON.stringify(data[0])} data={data[0]} />}

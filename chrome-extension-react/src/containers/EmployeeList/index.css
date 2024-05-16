@@ -1,6 +1,9 @@
 .employeeList{
     font-size: large;
 }
+.employeeName{
+    cursor: pointer;
+}
 .employeeListFirstName{
     background-color: #ffff00;
     color: red;

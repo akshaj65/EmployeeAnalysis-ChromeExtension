@@ -73,6 +73,7 @@ export const getAgeDistribution = handleErrors(async (req, res, next) => {
             }
         });
 
+        labels= Object.keys(labels)
         const dataSet ={
             labels,
             data

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './index.css'
-import EmployeeItem from '../EmployeeItem/item'
+import EmployeeContainer from '../Employee/Employee'
 
 const EmployeeList = ({ data }) => {
     const [visible, setVisible] = useState(false)
@@ -21,7 +21,7 @@ const EmployeeList = ({ data }) => {
     return (
         <>
             {visible && employee
-                && < EmployeeItem employee={employee} />
+                && < EmployeeContainer employee={employee} />
             }
             {!visible
                 && <div id="employeeList">
@@ -29,7 +29,7 @@ const EmployeeList = ({ data }) => {
                     <ul>
                         {data.map((employee) => {
                             return (
-                                <li key={employee._id} onClick={() => handleData(employee._id)}>
+                                <li className='employeeName' key={employee._id} onClick={() => handleData(employee._id)}>
                                     <span className='employeeListFirstName'>{employee.firstName}</span>
                                     &nbsp;&nbsp;
                                     <span className='employeeListLastName'>{employee.lastName}</span>

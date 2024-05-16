@@ -17,9 +17,12 @@ const Popup = () => {
 
   return (
     <div className="App">
-      <main>
-        <button onClick={handleClick}>Start</button>
-      </main>
+      <div className='heading'>
+        <h2>Employee Analysis</h2>
+      </div>
+      <div className="button-container">
+        <button className='custom-button' onClick={handleClick}>Start</button>
+      </div>
     </div>
   );
 };

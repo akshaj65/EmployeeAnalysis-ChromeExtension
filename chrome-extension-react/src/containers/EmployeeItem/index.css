@@ -1,4 +1,8 @@
+.employeeItem{
+    width: 100%;
+}
 .employeeItem> h4{
+    text-align: center;
     font-size: 28px;
 }
 .employeeDetails{
