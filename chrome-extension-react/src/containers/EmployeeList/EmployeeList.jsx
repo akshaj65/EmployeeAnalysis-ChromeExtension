@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './index.module.css'
+import './index.css'
 import EmployeeItem from '../EmployeeItem/item'
 
 const EmployeeList = ({ data }) => {
@@ -24,14 +24,15 @@ const EmployeeList = ({ data }) => {
                 && < EmployeeItem employee={employee} />
             }
             {!visible
-                && <div id="eqweq-employeeList">
+                && <div id="employeeList">
+                    <h5>Select a Employee</h5>
                     <ul>
                         {data.map((employee) => {
                             return (
                                 <li key={employee._id} onClick={() => handleData(employee._id)}>
-                                    <span>{employee.firstName}</span>
-                                    {/* underline this highlight this */}
-                                    <span>{employee.lastName}</span>
+                                    <span className='employeeListFirstName'>{employee.firstName}</span>
+                                    &nbsp;&nbsp;
+                                    <span className='employeeListLastName'>{employee.lastName}</span>
                                 </li>
                             )
                         })}

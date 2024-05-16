@@ -1,0 +1,13 @@
+.employeeList{
+    font-size: large;
+}
+.employeeListFirstName{
+    background-color: #ffff00;
+    color: red;
+    padding: 3px;
+    font-weight: bold;
+}
+
+.employeeListLastName{
+    font-weight: bold;
+}
