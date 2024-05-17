@@ -1,0 +1,15 @@
+.patientItem{
+    width: 100%;
+}
+.patientItem> h4{
+    text-align: center;
+    font-size: 28px;
+}
+.patientDetails{
+    display: flex;
+    justify-content: space-around;
+}
+
+.patientDetails img{
+    width: 150px;
+}

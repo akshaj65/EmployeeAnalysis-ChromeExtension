@@ -14,17 +14,30 @@ const graphStyle = {
 
 };
 
-const ScatterChart = ({ employeeData, referenceDataSet }) => {
+const ScatterChart = ({ employeeData, patientData, referenceDataSet }) => {
     // Extracting salary and experience data for the particular employee
-    const { firstName, salary, experience } = employeeData;
+    const { firstName, salary, experience } = employeeData || {};
+    const { FirstName, Diastolic, Systolic } = patientData || {};
 
-    const individualData = [{ x: experience, y: salary }];
+    // const mySet = {
+    //     label: `${firstName}'s Salary vs. Experience`,
+    //     data: [{ x: experience, y: salary }],
+    //     xTitle:'Experience (years)',
+    //     yTitle:'Salary (Rupees)',
+    // }
+
+    const mySet = {
+        label: `${FirstName}'s Diastolic vs. Systolic`,
+        data: [{ x: Systolic, y: Diastolic }],
+        xTitle:'Systolic',
+        yTitle:'Diastolic',
+    }
 
     const chartData = {
         datasets: [
             {
-                label: `${firstName}'s Salary vs. Experience`,
-                data: individualData,
+                label: mySet.label,
+                data: mySet.data,
                 backgroundColor: 'rgba(255, 99, 132, 0.8)',
                 borderColor: 'rgba(255, 99, 132, 1)',
                 borderWidth: 3,
@@ -45,7 +58,7 @@ const ScatterChart = ({ employeeData, referenceDataSet }) => {
                 type: 'linear',
                 title: {
                     display: true,
-                    text: 'Experience (years)',
+                    text: mySet.xTitle,
                     color: "white",
                 },
                 ticks: {
@@ -59,7 +72,7 @@ const ScatterChart = ({ employeeData, referenceDataSet }) => {
             y: {
                 title: {
                     display: true,
-                    text: 'Salary (Rupees)',
+                    text: mySet.yTitle,
                     color: "white",
                 },
                 ticks: {
@@ -78,7 +91,7 @@ const ScatterChart = ({ employeeData, referenceDataSet }) => {
             },
             title: {
                 display: true,
-                text: `${firstName}'s Salary vs. Experience`,
+                text: mySet.label,
                 color: "white",
             },
         },

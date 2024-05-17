@@ -1,0 +1,16 @@
+.patientList{
+    font-size: large;
+}
+.patientName{
+    cursor: pointer;
+}
+.patientListFirstName{
+    background-color: #ffff00;
+    color: red;
+    padding: 3px;
+    font-weight: bold;
+}
+
+.patientListLastName{
+    font-weight: bold;
+}

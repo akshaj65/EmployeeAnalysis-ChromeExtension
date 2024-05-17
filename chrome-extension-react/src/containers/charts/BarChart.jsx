@@ -20,13 +20,15 @@ const BarChart = (props) => {
     const {
         options: customOptions,
         highLightLabel,
+        patientData,
         employeeData,
         labels,
         dataSets,
         style = graphStyle
     } = props;
 
-    const { firstName } = employeeData;
+    const firstName = employeeData?.firstName;
+    const FirstName  = patientData?.FirstName;
     const defaultOptions = {
         scales: {
             x: {
@@ -72,7 +74,7 @@ const BarChart = (props) => {
             },
             title: {
                 display: true,
-                text: `${firstName}'s Employee Distribution by Age Range`,
+                text: `${firstName || FirstName}'s Employee Distribution by Age Range`,
                 color: "white",
             },
         },

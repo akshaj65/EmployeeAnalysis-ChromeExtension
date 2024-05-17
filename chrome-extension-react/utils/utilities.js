@@ -1,4 +1,5 @@
 export const getAgeDistributionLabel = (age) => {
+    console.log(typeof age);
     if (age >= 18 && age <= 25) {
         return '18-25';
     } else if (age >= 26 && age <= 35) {
