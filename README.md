@@ -1,8 +1,11 @@
-# EmployeeAnalysis-ChromeExtension
+# PatientAnalysis ChromeExtension
 
-This Chrome extension simplifies employee search by leveraging a local backend to query text selections. It provides  employee profiles and charts for singular matches, and displays lists for multiple matches.
+This Chrome extension simplifies employee search by leveraging a in variable JSON to query text selections. It provides  patient profiles and charts for singular matches, and displays lists for multiple matches.
 
-https://github.com/akshaj65/EmployeeAnalysis-ChromeExtension/assets/57281244/15c4efa8-dfcb-4393-803b-a532a61d1f77
+
+https://github.com/akshaj65/EmployeeAnalysis-ChromeExtension/assets/57281244/efefdaf8-fd7b-4a3b-87a7-73a67d45c3ff
+
+
 
 ## Table of Contents
 
