@@ -10,7 +10,7 @@ const graphStyle = {
     width: "100%",
     border: "1px solid #C4C4C4",
     borderRadius: "0.375rem",
-    padding: "2rem",
+    padding: "1.2rem",
 
 };
 

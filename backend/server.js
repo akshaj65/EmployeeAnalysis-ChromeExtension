@@ -7,11 +7,11 @@ process.on('uncaughtException', (err) => {
     process.exit(1);
 });
 
-try{
+try {
     await mongoose.connect(process.env.MONGODB_URL).then((data) => {
         console.log(`MongoDB connected with server: ${data.connection.host}`);
     });
-}catch(err){
+} catch (err) {
     console.log(`Error connecting to MongoDB: ${err.message}`)
     process.exit(1);
 }
