@@ -26,7 +26,7 @@ const PatientList = ({ data }) => {
             {!visible
                 && <div id="patientList">
                     <h5>Select a Patient</h5>
-                    <ul>
+                    <ol>
                         {data.map((patient) => {
                             return (
                                 <li className='patientName' key={patient._id} onClick={() => handleData(patient._id)}>
@@ -36,7 +36,7 @@ const PatientList = ({ data }) => {
                                 </li>
                             )
                         })}
-                    </ul>
+                    </ol>
                 </div>
             }
 

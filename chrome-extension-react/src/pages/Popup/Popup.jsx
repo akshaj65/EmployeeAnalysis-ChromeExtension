@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../../assets/img/logo.svg';
 import Greetings from '../../containers/Greetings/Greetings';
 import './Popup.css';
-
+import OpenImg from '../../assets/img/openPulsar.png'
 
 const Popup = () => {
   const handleClick = () => {
@@ -22,6 +22,10 @@ const Popup = () => {
       </div>
       <div className="button-container">
         <button className='custom-button' onClick={handleClick}>Start</button>
+        <a href="/patient.html" target="_blank" rel="noopener noreferrer">
+           Open Patient.html
+          <img src={OpenImg} alt="open" />
+        </a>
       </div>
     </div>
   );

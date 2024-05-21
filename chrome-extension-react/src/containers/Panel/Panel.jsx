@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { handleSlide } from '../../../utils/utils';
 import { getpatientsByFirstName } from '../../api/api';
 import { handleMinize } from '../../pages/Content/modules/utils';
 import PatientAnalytics from '../patient/PatientAnalytics/PatientAnalytics';
@@ -7,7 +8,6 @@ import './index.css';
 const PanelComponent = ({ content = "" }) => {
 
     const [data, setData] = useState([]);
-    const [isMinimize, seIsMinimize] = useState(false);
 
     const fetchEmployees = useCallback(async (query) => {
         try {
@@ -51,19 +51,6 @@ const PanelComponent = ({ content = "" }) => {
             panel.remove();
     }
 
-    const handleSlide = (direction) => {
-        const panel = document.getElementById('panel');
-        if (!panel) return;
-        if (direction === 'left') {
-            handleMinize('left')
-            panel.classList.remove('moveRight');
-        } else {
-            seIsMinimize(true);
-            handleMinize('right')
-            panel.classList.add('moveRight');
-
-        }
-    }
 
     useEffect(() => {
        

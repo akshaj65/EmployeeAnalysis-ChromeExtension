@@ -1,8 +1,12 @@
 .patientList{
     font-size: large;
 }
+.patientList h5{
+    font-size: 1.2rem;
+}
 .patientName{
     cursor: pointer;
+    font-size: 15px;
 }
 .patientListFirstName{
     background-color: #ffff00;

@@ -10,19 +10,34 @@
 .heading{
   background-color: blueviolet;
   padding: 20px;
-width: 100%;
+  width: 100%;
 }
 
 .button-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin: 38px 16px;
+  align-items: center;
+  gap: 13px;
+}
+.button-container a{
+  text-decoration: none;
+  font-size: 17px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+}
+.button-container img{
+  width: 18px;
 }
 .custom-button {
+  width: fit-content;
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
-  padding: 8px 25px;
+  padding: 8px 49px;
   text-align: center;
   text-decoration: none;
   display: inline-block;

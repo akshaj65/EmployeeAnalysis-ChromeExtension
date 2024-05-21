@@ -11,6 +11,7 @@ const graphStyle = {
     border: "1px solid #C4C4C4",
     borderRadius: "0.375rem",
     padding: "1.2rem",
+    marginBottom:'200px'
 
 };
 

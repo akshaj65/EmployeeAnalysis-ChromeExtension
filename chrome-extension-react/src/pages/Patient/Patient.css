@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=Calligraffitti&display=swap');
+
+.patientBoxGrid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+    width: 700px;
+}
+
+.patientBox{
+    display: flex;
+    width: 947px;
+    width: 1400px;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding-top: 45px;
+}
+.patientBox >.item{
+    position: relative;
+    background-color: #BBADFF;
+   font-size: 17px;
+    text-align: center;
+    border: 1px solid; 
+    width: 150px;
+    height: 100px;
+    border-radius: 5px;
+    font-weight: 900;
+    transition: transform 0.3s ease;
+    color: white;
+    letter-spacing: 2px;
+   
+}
+.patientBox >.item >div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+ 
+}
+.patientBox >.item:hover{
+    transform: scale(1.1);
+    z-index: 1;
+    box-shadow: 0px 0px 4px #000000ad;
+    border: 2px solid white; 
+}
+
+.patientBox > .item:nth-child(2n){
+    height: 150px;
+    width: 100px;
+}  
+.patientBox >.item:nth-child(2n) >div{
+       /* default text style */
+       font-size: 24px;
+       color: #fff;
+       -webkit-text-stroke: 1px black;
+       transform: rotate(-90deg);
+       left: 7px;
+       top: 63px;
+}
+.patientBox >.item:nth-child(2n):hover{
+    transform: scale(1.1) rotate(90deg)
+}
+.patientBox > .item:nth-child(10n+5){
+    width: 200px;
+    height: 150px;
+    font-family: 'Calligraffitti', cursive;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-shadow: -15px 5px 20px #ced0d3;
+    letter-spacing: 0.3em;
+    text-align: center;
+    color: #f6f6f6;
+    text-shadow: 2px 2px 0px #6313b0, 4px 4px 0px #FFD662, 6px 6px 0px #FF80BF, 8px 8px 0px #EF5097, 10px 10px 0px #6868AC, 12px 12px 0px #90B1E0;
+}
+
