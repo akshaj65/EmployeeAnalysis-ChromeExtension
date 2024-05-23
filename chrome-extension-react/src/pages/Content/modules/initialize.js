@@ -3,6 +3,7 @@ import ReactDOMServer from 'react-dom/server';
 
 import ReactDOM from 'react-dom';
 import PanelComponent from '../../../containers/Panel/Panel';
+import { handleSlide } from '../../../../utils/utils';
 
 export const initialize= () =>{
     let panel = document.getElementById('panel');
@@ -13,6 +14,7 @@ export const initialize= () =>{
         // const panelHTML = ReactDOMServer.renderToString(<PanelComponent />);
         // panel.innerHTML = panelHTML;
         ReactDOM.render(<PanelComponent />, panel);
+        handleSlide('right')
     }
   
 
